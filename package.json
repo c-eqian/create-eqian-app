@@ -1,0 +1,31 @@
+{
+  "name": "create-eqian-app",
+  "version": "1.0.0",
+  "description": "create-eqian-app 是使用Node.js构建一个交互式的脚手架工具",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "unbuild --stub && node ./index",
+    "build": "unbuild"
+  },
+  "bin": {
+    "create-eqian-app": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "template",
+    "dist"
+  ],
+  "keywords": [],
+  "author": "eqian",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/minimist": "^1.2.5",
+    "@types/prompts": "^2.4.9",
+    "kolorist": "^1.8.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2",
+    "unbuild": "^2.0.0"
+  }
+}
