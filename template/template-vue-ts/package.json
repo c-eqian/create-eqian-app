@@ -1,20 +1,95 @@
 {
-  "name": "vite-vue-typescript-starter",
+  "name": "template-vue-ts",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "dev": "vite --mode develop -- --debug hmr --profile",
+    "start:prod": "vite --mode production",
+    "build": "vite build --mode develop",
+    "build:prod": "vite build --mode production",
+    "preview": "vite preview",
+    "fix-memory-limit": "cross-env LIMIT=3192 increase-memory-limit",
+    "commit": "git-cz",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,vue}\" --fix"
   },
   "dependencies": {
-    "vue": "^3.4.26"
+    "@popperjs/core": "^2.11.8",
+    "@vueuse/core": "^10.9.0",
+    "animate.css": "^4.1.1",
+    "axios": "^1.6.2",
+    "co-utils-vue": "^2.2.1",
+    "element-plus": "^2.7.0",
+    "js-cookie": "^3.0.5",
+    "js-md5": "^0.8.3",
+    "lodash-es": "^4.17.21",
+    "mitt": "^3.0.1",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persist": "^1.0.0",
+    "sass": "^1.69.5",
+    "typed.js": "^2.1.0",
+    "typescript": "^4.9.5",
+    "uuid": "^9.0.1",
+    "vite": "^5.2.8",
+    "vue": "^3.4.21",
+    "vue-clipboard3": "^2.0.0",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.10",
-    "vue-tsc": "^2.0.16"
+    "@babel/eslint-parser": "^7.23.3",
+    "@element-plus/icons-vue": "^2.3.1",
+    "@types/js-cookie": "^3.0.6",
+    "@types/nprogress": "^0.2.3",
+    "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "@vue/compiler-sfc": "^3.3.9",
+    "autoprefixer": "^10.4.16",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard-with-typescript": "^40.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-import-resolver-webpack": "^0.13.8",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "naive-ui": "^2.38.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "tailwindcss": "^3.3.5",
+    "unplugin-auto-import": "^0.17.2",
+    "unplugin-vue-components": "^0.26.0",
+    "vfonts": "^0.0.3",
+    "vite-plugin-cdn-import": "^0.3.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue-tsc": "^2.0.13"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint"
   }
 }

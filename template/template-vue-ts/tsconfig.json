@@ -1,25 +1,35 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "allowJs": true,
+    "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "moduleResolution": "node",
+    "noEmit": false,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "jsxImportSource": "vue",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve",
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true, // 不对第三方依赖类型检查 ，element-plus 生产打包报错
+    "allowSyntheticDefaultImports": true, // 默认导入
+    "suppressImplicitAnyIndexErrors": true, //加入这段代码解决main.ts报错问题
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client", "element-plus/global"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+
+  "include": ["src/**/*.ts", "src/**/*.d.ts",
+    "src/**/*.tsx", "src/**/*.vue",
+    "vite.config.mts",
+    "./types/auto-imports.d.ts" // 和 AutoImport dts保持一致 引入即可
+  ],
+  "exclude": ["node_modules", "dist"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
