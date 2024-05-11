@@ -9,11 +9,17 @@ import { useGetTokenCookie } from '@/hooks/use-cookie/auth';
 import commonRouter from './common';
 import modulesRoutes from './modules';
 
+const notFound404 = {
+  path: '/:pathMatch(.*)*',
+  redirect: '/404',
+  children: []
+};
 const routes: Array<any> = [...commonRouter, ...modulesRoutes];
 const router = createRouter({
   history: createWebHistory(),
   routes
 });
+router.addRoute(notFound404);
 router.beforeEach((to, _from, next) => {
   if (to.meta.auth && to.path !== '/login' && !useGetTokenCookie()) {
     next(`/login?redirect=${to.fullPath}`); // 否则全部重定向到登录页

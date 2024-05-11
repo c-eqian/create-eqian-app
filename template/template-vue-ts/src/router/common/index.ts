@@ -19,8 +19,21 @@ export const routes = [
         children: []
       }
     ]
+  },
+  {
+    path: '/404',
+    name: 'NotFound',
+    component: () => import('@/components/CzErrorPage/404.vue'),
+    meta: { title: '404' },
+    children: []
+  },
+  {
+    path: '/403',
+    name: 'NotPermission',
+    component: () => import('@/components/CzErrorPage/403.vue'),
+    meta: { title: '403' },
+    children: []
   }
-
 ];
 
 export default routes;

@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    403: typeof import('./../src/components/CzErrorPage/403.vue')['default']
+    404: typeof import('./../src/components/CzErrorPage/404.vue')['default']
     ChatAside: typeof import('./../src/modules/chat/components/ChatAside.vue')['default']
     ChatContent: typeof import('./../src/modules/chat/components/ChatContent.vue')['default']
     ChatFeedback: typeof import('./../src/modules/chat/components/ChatFeedback.vue')['default']
@@ -31,11 +33,17 @@ declare module 'vue' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
     ElPopconfirm: typeof import('element-plus/es')['ElPopconfirm']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSpace: typeof import('element-plus/es')['ElSpace']
+    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     ElUpload: typeof import('element-plus/es')['ElUpload']
+    Error403: typeof import('./../src/components/CzErrorPage/error-403.vue')['default']
+    Error404: typeof import('./../src/components/CzErrorPage/error-404.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ZkSvg: typeof import('./../src/components/ZkSvg/index.vue')['default']
