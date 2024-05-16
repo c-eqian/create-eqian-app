@@ -21,7 +21,6 @@ async function gitPush() {
     const { version } =  JSON.parse(fs.readFileSync(ROOT_PKG, 'utf-8'));
     execSync('git add .', { stdio: 'inherit' });
     execSync(`git commit -m "chore: release v${version}"`, { stdio: 'inherit' });
-    execSync('git show-ref --tags');
     exec(`git show-ref --tags v${version}`, (error, stdout) => {
         if (!error && stdout !== '') {
             execSync(`git tag -a v${version} -m "v${version}"`, { stdio: 'inherit' });
