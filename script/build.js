@@ -23,6 +23,7 @@ async function gitPush() {
     execSync(`git commit -m "chore: release v${version}"`, { stdio: 'inherit' });
     exec(`git show-ref --tags v${version}`, (error, stdout) => {
         if (!error && stdout !== '') {
+            consola.info(`git tag -a v${version} -m "v${version}"`)
             execSync(`git tag -a v${version} -m "v${version}"`, { stdio: 'inherit' });
         }
         execSync(`git push origin master v${version}`, { stdio: 'inherit' });
